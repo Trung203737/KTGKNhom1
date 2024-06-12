@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>User Info</title>
+</head>
+<body>
+<h1>Admin Page</h1>
+<nav>
+    <a href="/">Home</a> |
+    <a href="/userInfo">User Info</a> |
+    <a href="/admin">Admin</a> |
+    <a href="/logout">Logout</a>
+    <br/><br/>
+    <b>This is protected page!</b>
+
+    <br/><br/>
+
+    <div th:if="${userInfo != null}" th:utext="${userInfo}"></div>
+</nav>
+</body>
+</html>
