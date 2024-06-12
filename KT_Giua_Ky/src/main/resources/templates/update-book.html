@@ -10,20 +10,20 @@
 <body>
 <section layout:fragment="content" class="container mt-5">
     <h1 class="mb-4">Update Môn Học</h1>
-    <form  th:action="@{book/update/1}"
-           method="post" class="needs-validation" novalidate>
+    <form   th:action="@{/book/update/{id}(id=${book.id})}"
+            th:object="${book}" method="post" class="needs-validation" >
         <div class="mb-3">
             <label for="name" class="form-label">Subject name:</label>
-            <input type="text"  class="form-control" id="name" required>
+            <input type="text"  th:field="*{name}" class="form-control" id="name" required>
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Price:</label>
-            <input type="text" class="form-control" id="price"
+            <input type="text" th:field="*{price}" class="form-control" id="price"
                    required>
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description:</label>
-            <textarea class="form-control"
+            <textarea th:field="*{description}" class="form-control"
                       id="description" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Save Changes</button>
